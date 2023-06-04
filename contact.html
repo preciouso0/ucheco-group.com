@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4504a7cccf.js" crossorigin="anonymous"></script>
+    <title>Contact</title>
+</head>
+<body>
+    <navbar id="nav">
+    <div class="container">
+        <div class="logo">uc</div>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </div>
+</navbar>
+<h1 class="message">message <span> us</span></h1>
+<div class="container-2">
+    <div class="content">
+        <div class="nav-content">
+            <h1 class="nav-header"><span>ucheco</span>  group of companies.</h1>
+            <h2>dealers on all kinds of ankara materials</h2>
+            <p>patronize us today and become our top customer.</p>
+        </div>
+    </div>
+    <form onsubmit="sendEmail(); reset(); return false;">
+        <h3>GET IN TOUCH</h3>
+        <input type="text" id="name" placeholder="your name" required>
+        <input type="email" id="email" placeholder="Enter email" required>
+        <input type="number" id="phone" placeholder="Phone no." required>
+        <textarea name="message" id="message" rows="4" placeholder="Reach Out"></textarea>
+        <button type="submit">send message</button>
+
+    </form>
+
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+    Host : "smtp.gmail.com",
+    Username : "nwankwochiagozie25@gmail.com",
+    Password : "25bekee.",
+    To : 'nwankwochiagozie25@gmail.com',
+    From : document.getElementById('email').value,
+    Subject : "Ankara material enquiry",
+    Body : "name" + document.getElementById('.name').value
+}).then(
+  message => alert(message)
+);
+        }
+    </script>
+</div>
+   
+</body>
+</html>
